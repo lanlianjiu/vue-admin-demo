@@ -1,6 +1,8 @@
 import axios from 'axios'
 import store from '@/store'
-import { getToken } from '@/utils/auth'
+import {
+  getToken
+} from '@/utils/auth'
 import * as tools from './tools'
 
 const http = axios.create({
@@ -12,7 +14,7 @@ const http = axios.create({
 http.interceptors.request.use(
   config => {
     if (store.getters.userInfo.token) {
-      config.headers['eden-token'] = getToken()
+      config.headers['Authorization'] = getToken()
     }
     return config
   },

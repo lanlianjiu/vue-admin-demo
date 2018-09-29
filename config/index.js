@@ -12,7 +12,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/admin': {
-        target: 'http://www.adminapi.com', // 设置你调用的接口域名和端口号
+        target: 'http://www.adminapi.com:3000', // 设置你调用的接口域名和端口号
         changeOrigin: true, // 跨域
         pathRewrite: {
           '^/admin': '/'
