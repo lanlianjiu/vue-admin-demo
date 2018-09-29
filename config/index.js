@@ -10,8 +10,16 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
-
+    proxyTable: {
+      '/admin': {
+        target: 'http://www.adminapi.com', // 设置你调用的接口域名和端口号
+        changeOrigin: true, // 跨域
+        pathRewrite: {
+          '^/admin': '/'
+        }
+      }
+    },
+    disableHostCheck: true,
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
     port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
