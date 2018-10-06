@@ -18,50 +18,54 @@
 </template>
 
 <script>
-import Navbar from './Navbar'
-import Sidebar from './Sidebar'
-import AppMain from './AppMain'
-import TagsView from './TagsView'
+import Navbar from "./Navbar";
+import Sidebar from "./Sidebar";
+import AppMain from "./AppMain";
+import TagsView from "./TagsView";
 
 export default {
-  name: 'Layout',
+  name: "Layout",
   components: {
-    'side-bar': Sidebar,
-    'nav-bar': Navbar,
-    'app-main': AppMain,
-    'tags-view': TagsView
+    "side-bar": Sidebar,
+    "nav-bar": Navbar,
+    "app-main": AppMain,
+    "tags-view": TagsView
   },
   computed: {
     asideWidth() {
-      return this.$store.getters.getSliderStateWidth
+      return this.$store.getters.getSliderStateWidth;
     }
   }
-}
+};
 </script>
 
 <style lang="stylus" scoped>
-@import "../../assets/styl/variables.styl"
+@import '../../assets/styl/variables.styl';
 
-.el-container
-  width 100%
-  height 100%
+.el-container {
+  width: 100%;
+  height: 100%;
+}
 
-.el-header
-  padding 0
-  font-size 0
-  line-height 60px
-  background white
-  box-sizing border-box
-  overflow hidden
+.el-header {
+  padding: 0;
+  font-size: 0;
+  line-height: 60px;
+  background: white;
+  box-sizing: border-box;
+  overflow: hidden;
+}
 
-.el-aside
-  transition width .3s
-  background el-aside-bg
-  color el-aside-color
-  overflow hidden
+.el-aside {
+  transition: width 0.3s;
+  background: el-aside-bg;
+  color: el-aside-color;
+  overflow: hidden;
+}
 
-.el-main
-  padding 0
-  height 100%
-  overflow auto
+.el-main {
+  padding: 0;
+  height: 100%;
+  overflow: auto;
+}
 </style>
